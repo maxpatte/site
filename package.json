@@ -1,0 +1,15 @@
+{
+  "name": "max-patte",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "author": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "del": "^0.1.3",
+    "gulp": "^3.8.10",
+    "gulp-serve": "^0.3.0"
+  }
+}
