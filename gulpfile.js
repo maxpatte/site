@@ -11,12 +11,14 @@ var gulp = require('gulp'),
     serve = require('gulp-serve'),
     rename = require('gulp-rename'),
     gm = require('gulp-gm'),
+    runSequence = require('run-sequence'),
     stringify = require('virtual-dom-stringify'),
     through = require('through2'),
     unrequire = require('./lib/unrequire'),
     Vinyl = require('vinyl'),
     path = require('path'),
     streamFromArray = require('stream-from-array'),
+    processCSS = require('suitcss-preprocessor'),
     layout = require('./lib/layout'),
     app = require('./lib/app'),
     pages = require('./data/pages'),
@@ -28,6 +30,19 @@ gulp.task('dev', ['build', 'serve', 'watch']);
 
 gulp.task('clean', function (cb) {
   del(['./build/*'], cb);
+});
+
+gulp.task('styles', function () {
+  return gulp.src('./lib/layout.css')
+    .pipe(through.obj(function (data, enc, next) {
+      data.contents = new Buffer(processCSS(data.contents.toString('utf8')));
+      this.push(data);
+      next();
+    }))
+    .pipe(rename({
+      basename: "style",
+    }))
+    .pipe(gulp.dest('./build'));
 });
 
 gulp.task('images', function () {
@@ -53,7 +68,7 @@ gulp.task('thumbnails', function () {
 
 });
 
-gulp.task('build', ['clean', 'thumbnails', 'images'], function () {
+gulp.task('pages', function () {
 
   var stateToTree,
       treeToVinyl;
@@ -98,6 +113,10 @@ gulp.task('build', ['clean', 'thumbnails', 'images'], function () {
     .pipe(treeToVinyl)
     .pipe(gulp.dest('./build'));
 });
+
+gulp.task('build', function (callback) {
+  runSequence('clean', ['pages', 'thumbnails', 'images', 'styles'], callback);
+})
 
 gulp.task('serve', serve({
   port:8080,
