@@ -35,12 +35,16 @@ gulp.task('clean', function (cb) {
 gulp.task('styles', function () {
   return gulp.src('./lib/layout.css')
     .pipe(through.obj(function (data, enc, next) {
-      data.contents = new Buffer(processCSS(data.contents.toString('utf8')));
+      data.contents = new Buffer(
+        processCSS(data.contents.toString('utf8'), {
+          source: data.path
+        })
+      );
       this.push(data);
       next();
     }))
     .pipe(rename({
-      basename: "style",
+      basename: 'style',
     }))
     .pipe(gulp.dest('./build'));
 });
