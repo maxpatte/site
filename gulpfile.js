@@ -10,7 +10,8 @@ var gulp = require('gulp'),
     del = require('del'),
     serve = require('gulp-serve'),
     rename = require('gulp-rename'),
-    gm = require('gulp-gm'),
+    fs = require('fs'),
+    gm = require('graphicsmagick-stream'),
     runSequence = require('run-sequence'),
     stringify = require('virtual-dom-stringify'),
     through = require('through2'),
@@ -22,6 +23,7 @@ var gulp = require('gulp'),
     layout = require('./lib/layout'),
     app = require('./lib/app'),
     pages = require('./data/pages'),
+    images = require('./data/images'),
     states;
 
 gulp.task('default', function () {});
@@ -51,24 +53,26 @@ gulp.task('styles', function () {
 
 gulp.task('images', function () {
 
-  return gulp.src('./data/images/*.jpg')
-    .pipe(gm(function (file) {
-      return file.resize(960, 540);
-    }))
-    .pipe(rename({ suffix: "-960x540" }))
-    .pipe(gulp.dest('./build/images'));
+  var stateToVinyl,
+      transform = gm();
 
-});
+  unrequire(require.resolve('./data/images'));
+  images = require('./data/images');
 
+  stateToVinyl = through.obj(function (data, enc, next) {
+    var file = new Vinyl({
+      cwd: process.cwd(),
+      base: path.join(process.cwd()),
+      path: path.join(process.cwd(), '/images', data.id),
+      contents: fs.createReadStream(data.src).pipe(transform({ scale: data.scale }))
+    });
+    this.push(file);
+    next();
+  });
 
-gulp.task('thumbnails', function () {
-
-  return gulp.src('./data/images/*.jpg')
-    .pipe(gm(function (file) {
-      return file.resize(240, 135);
-    }))
-    .pipe(rename({ suffix: "-240x135" }))
-    .pipe(gulp.dest('./build/images'));
+  return streamFromArray.obj(images)
+    .pipe(stateToVinyl)
+    .pipe(gulp.dest('./build'));
 
 });
 
@@ -119,7 +123,7 @@ gulp.task('pages', function () {
 });
 
 gulp.task('build', function (callback) {
-  runSequence('clean', ['pages', 'thumbnails', 'images', 'styles'], callback);
+  runSequence('clean', ['pages', 'images', 'styles'], callback);
 })
 
 gulp.task('serve', serve({
