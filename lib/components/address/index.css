@@ -1,0 +1,27 @@
+/** @define Address; use strict */
+
+:root {
+}
+
+/**
+ * Address
+ */
+
+.Address {
+}
+
+.Address-item {
+}
+
+.Address-item-title {
+  float:left;
+  display: block;
+  width: 5em;
+
+  font-weight: bold;
+}
+
+.Address-item-description {
+  float:left;
+  display: block;
+}
