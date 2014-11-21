@@ -2,6 +2,7 @@
 
 @import "./base";
 @import "./utilities";
+@import "suitcss-components-button";
 @import "suitcss-utils-layout";
 @import "./components/header";
 @import "./components/brand";
@@ -34,7 +35,11 @@
   --Paginator-link-hover-color: var(--link-hover-color);
   --Paginator-link-disabled-color: #777777;
 
-
+  --Button-border-color: currentcolor;
+  --Button-border-width: 2px;
+  --Button-color: var(--link-color);
+  --Button-disabled-opacity: 0.6;
+  --Button-font: inherit;
 
 }
 
