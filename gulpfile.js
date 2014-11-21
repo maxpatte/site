@@ -64,7 +64,10 @@ gulp.task('images', function () {
       cwd: process.cwd(),
       base: path.join(process.cwd()),
       path: path.join(process.cwd(), '/images', data.id),
-      contents: fs.createReadStream(data.src).pipe(transform({ scale: data.scale }))
+      contents: fs.createReadStream(data.src).pipe(transform({
+        scale: data.scale,
+        crop: data.crop
+      }))
     });
     this.push(file);
     next();

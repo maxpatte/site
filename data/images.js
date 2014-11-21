@@ -14,6 +14,11 @@ images = [
     src: __dirname + '/images/placeholder.jpg',
     scale: { 
       width: 172,
+      height: 100,
+      type: 'cover'
+    },
+    crop: {
+      width: 172,
       height: 100
     }
   },
