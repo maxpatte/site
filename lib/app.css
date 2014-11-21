@@ -20,7 +20,6 @@
   --link-disabled-color: #777;
   --link-hover-decoration: underline;
 
-
   --Brand-color: var(--text-color);
 
   --Navigation-link-color: var(--text-color);
@@ -44,5 +43,15 @@
 }
 
 body {
+}
+
+.App {
   margin:20px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .App {
+    margin:20px auto;
+    width:960px;
+  }
 }
