@@ -169,3 +169,9 @@ address {
   font-style: normal;
   line-height: var(--line-height-base);
 }
+
+/** Horizontal Rule */
+hr {
+  border-color:currentcolor;
+  border-style:solid;
+}
