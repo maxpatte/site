@@ -11,5 +11,25 @@
  */
 
 .Work {
+  max-width:960px;
+}
 
+.Work-image {
+  float:left;
+  margin-bottom:20px;
+}
+
+.Work-caption {
+  width: 70%;
+  float:left;
+  margin-top:6px;
+}
+
+.Work-cta {
+  float:right;
+}
+
+.Work-paginator {
+  width: 70%;
+  float:left;
 }
