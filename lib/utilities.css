@@ -1,0 +1,21 @@
+/** Utilities; use strict */
+
+/** Responsive image */
+
+.u-imgResponsive {
+  display: block;
+  max-width: 100%; /* Part 1: Set a maximum relative to the parent */
+  height: auto; /* Part 2: Scale the height according to the width, otherwise you get stretching */
+}
+
+/** clearfix */
+
+.u-clearfix:before,
+.u-clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.u-clearfix:after {
+  clear: both;
+}

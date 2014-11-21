@@ -1,0 +1,15 @@
+/** @define Header; use strict */
+
+@import "../../utilities";
+
+:root {
+}
+
+/**
+ * Header
+ */
+
+.Header {
+  width: 100%;
+  margin-bottom:20px;
+}

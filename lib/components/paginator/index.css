@@ -1,0 +1,36 @@
+/** @define Paginator; use strict */
+
+:root {
+  --Paginator-color: #333333;
+  --Paginator-link-color: #428bca;
+  --Paginator-link-hover-color: #23527c;
+  --Paginator-link-disabled-color: #777777;
+}
+
+/**
+ * Paginator
+ */
+
+.Paginator {
+  color:var(--Paginator-color);
+}
+
+.Paginator-next,
+.Paginator-previous {
+  font-weight:bold;
+  color:var(--Paginator-link-color);
+}
+
+.Paginator-next:hover,
+.Paginator-next:focus,
+.Paginator-next:active,
+.Paginator-previous:hover,
+.Paginator-previous:focus,
+.Paginator-previous:active {
+  color:var(--Paginator-link-hover-color);
+}
+
+.Paginator-next.is-disabled,
+.Paginator-previous.is-disabled {
+  color:var(--Paginator-link-disabled-color);
+}

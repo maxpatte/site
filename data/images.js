@@ -10,6 +10,14 @@ var images;
 
 images = [
   {
+    id: '/placeholder-172x100.jpg',
+    src: __dirname + '/images/placeholder.jpg',
+    scale: { 
+      width: 172,
+      height: 100
+    }
+  },
+  {
     id: '/placeholder-240x135.jpg',
     src: __dirname + '/images/placeholder.jpg',
     scale: { 

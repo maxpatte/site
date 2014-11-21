@@ -35,7 +35,7 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('styles', function () {
-  return gulp.src('./lib/layout.css')
+  return gulp.src('./lib/app.css')
     .pipe(through.obj(function (data, enc, next) {
       data.contents = new Buffer(
         processCSS(data.contents.toString('utf8'), {

@@ -11,23 +11,23 @@ var press;
 press = [
   {
     id: '/b',
-    title: 'Press B',
+    title: 'Lorem ipsum dolor sit amet.',
     date: '2014-06-06',
-    thumbnailURL: '/images/placeholder-240x135.jpg',
+    thumbnailURL: '/images/placeholder-172x100.jpg',
     href: '#'
   },
   {
     id: '/c',
-    title: 'Press C',
+    title: 'Consectetur adipiscing elit.',
     date: '2014-07-07',
-    thumbnailURL: '/images/placeholder-240x135.jpg',
+    thumbnailURL: '/images/placeholder-172x100.jpg',
     href: '#'
   },
   {
     id: '/a',
-    title: 'Press A',
+    title: 'Sed do eiusmod tempor incididunt.',
     date: '2014-05-05',
-    thumbnailURL: '/images/placeholder-240x135.jpg',
+    thumbnailURL: '/images/placeholder-172x100.jpg',
     href: '#'
   }
 ];

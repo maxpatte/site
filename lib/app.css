@@ -1,0 +1,41 @@
+/** @define App; use strict */
+
+@import "./base";
+@import "./utilities";
+@import "./components/header";
+@import "./components/brand";
+@import "./components/navigation";
+@import "./components/gallery";
+@import "./components/work";
+@import "./components/press";
+
+:root {
+  --text-color: #333333;
+
+  --link-color: #DD3333;
+  --link-hover-color: #BB0000;
+  --link-disabled-color: #777;
+  --link-hover-decoration: underline;
+
+
+  --Brand-color: var(--text-color);
+
+  --Navigation-link-color: var(--text-color);
+  --Navigation-link-hover-color: var(--link-color);
+  --Navigation-link-active-color: var(--link-color);
+
+  --Press-item-link-color: var(--text-color);
+  --Press-item-link-hover-color: var(--link-color);
+
+  --Paginator-color: var(--link-color);
+  --Paginator-link-color: var(--link-color);
+  --Paginator-link-hover-color: var(--link-hover-color);
+  --Paginator-link-disabled-color: #777777;
+
+
+
+}
+
+body {
+  margin:20px;
+}

@@ -21,6 +21,6 @@
     "through2": "^0.6.3",
     "vinyl": "^0.4.3",
     "virtual-dom": "0.0.21",
-    "virtual-dom-stringify": "^0.9.0"
+    "virtual-dom-stringify": "^0.11.0"
   }
 }

@@ -1,0 +1,49 @@
+/** @define Press; use strict */
+
+@import "../../utilities";
+
+:root {
+  --Press-item-link-color: #428bca;
+  --Press-item-link-hover-color: #23527c;
+}
+
+/**
+ * Press
+ */
+
+.Press {
+}
+
+.Press-item {
+  float:left;
+  margin:0px 10px 10px 0px;
+}
+
+.Press-item-link {
+}
+
+.Press-item-title {
+  float:left;
+  width:100px;
+  margin-right:10px;
+}
+
+.Press-item-thumbnail {
+}
+
+.Press-item-link {
+  color:var(--Press-item-link-color);
+}
+
+.Press-item-link:hover,
+.Press-item-link:focus,
+.Press-item-link:active {
+  color:var(--Press-item-link-hover-color);
+}
+
+.Press-item-link,
+.Press-item-link:hover,
+.Press-item-link:focus,
+.Press-item-link:active {
+  text-decoration: none;
+}

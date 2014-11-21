@@ -19,7 +19,7 @@ function convertDate (page) {
 };
 
 function byDate (a, b) {
-  return a.date - b.date;
+  return b.date - a.date;
 };
 
 function prependId (id, page) {

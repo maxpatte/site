@@ -1,0 +1,24 @@
+/** @define Brand; use strict */
+
+:root {
+  --Brand-color:#428bca;
+}
+
+/**
+ * Brand
+ */
+
+.Brand {
+  font-size: 2em;
+  float: left;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.Brand,
+.Brand:hover,
+.Brand:focus,
+.Brand:active {
+  color:var(--Brand-color);
+  text-decoration: none;
+}
