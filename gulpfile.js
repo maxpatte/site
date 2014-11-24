@@ -11,7 +11,7 @@ var gulp = require('gulp'),
     serve = require('gulp-serve'),
     rename = require('gulp-rename'),
     fs = require('fs'),
-    gm = require('graphicsmagick-stream'),
+    gm = require('gm'),
     runSequence = require('run-sequence'),
     stringify = require('virtual-dom-stringify'),
     through = require('through2'),
@@ -53,21 +53,37 @@ gulp.task('styles', function () {
 
 gulp.task('images', function () {
 
-  var stateToVinyl,
-      transform = gm();
+  var stateToVinyl;
 
   unrequire(require.resolve('./data/images'));
   images = require('./data/images');
 
   stateToVinyl = through.obj(function (data, enc, next) {
-    var file = new Vinyl({
+
+    var contents,
+        file;
+
+    contents = gm(fs.createReadStream(data.src, data.id))
+      .strip()
+      .quality(85)
+      .gravity(data.gravity || 'Center')
+
+
+    if (data.scale) {
+      contents = contents.resize(data.scale.width, data.scale.height, data.scale.options);
+    };
+
+    if (data.crop) {
+      contents = contents.crop(data.crop.width, data.crop.height, data.crop.x, data.crop.y);
+    };
+
+    contents = contents.stream();
+
+    file = new Vinyl({
       cwd: process.cwd(),
       base: path.join(process.cwd()),
       path: path.join(process.cwd(), '/images', data.id),
-      contents: fs.createReadStream(data.src).pipe(transform({
-        scale: data.scale,
-        crop: data.crop
-      }))
+      contents: contents
     });
     this.push(file);
     next();

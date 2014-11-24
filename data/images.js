@@ -10,16 +10,14 @@ var images;
 
 images = [
   {
-    id: '/placeholder-172x100.jpg',
+    id: '/placeholder-135x135.jpg',
     src: __dirname + '/images/placeholder.jpg',
-    scale: { 
-      width: 172,
-      height: 100,
-      type: 'cover'
+    scale: {
+      height: 135
     },
     crop: {
-      width: 172,
-      height: 100
+      width: 135,
+      height: 135
     }
   },
   {
