@@ -2,7 +2,7 @@
 
 @import "./base";
 @import "./utilities";
-@import "suitcss-components-button";
+@import "./components/button";
 @import "suitcss-utils-layout";
 @import "./components/header";
 @import "./components/brand";
@@ -20,7 +20,7 @@
   --link-disabled-color: #777;
   --link-hover-decoration: underline;
 
-  --Brand-color: var(--text-color);
+  --Brand-color: #777777;
 
   --Navigation-link-color: var(--text-color);
   --Navigation-link-hover-color: var(--link-color);
