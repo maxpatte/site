@@ -1,0 +1,17 @@
+/** use strict */
+
+@import "suitcss-components-button";
+
+/**
+ * Modifier: cta buttons
+ */
+
+.Button--cta {
+  color: #666;
+  font-size: 12px;
+  padding: 0.3em 0.5em;
+}
+
+.Button--cta.is-disabled {
+  opacity:1;
+}
