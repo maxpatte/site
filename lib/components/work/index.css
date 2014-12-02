@@ -15,14 +15,12 @@
 }
 
 .Work-image {
-  float:left;
   margin-bottom:20px;
 }
 
 .Work-caption {
   width: 70%;
   float:left;
-  margin-top:6px;
 }
 
 .Work-cta {
@@ -32,4 +30,21 @@
 .Work-paginator {
   width: 70%;
   float:left;
+}
+
+.Work-title {
+  margin-top:0px;
+  color:#666666;
+}
+
+.Work-medium,
+.Work-dimensions,
+.Work-price {
+  display:block;
+}
+
+.Work-medium,
+.Work-dimensions {
+  font-style: italic;
+  color:#888;
 }
