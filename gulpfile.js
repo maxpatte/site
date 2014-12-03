@@ -10,6 +10,8 @@ var gulp = require('gulp'),
     del = require('del'),
     serve = require('gulp-serve'),
     rename = require('gulp-rename'),
+    frontMatter = require('gulp-front-matter'),
+    markdown = require('gulp-markdown'),
     fs = require('fs'),
     gm = require('gm'),
     runSequence = require('run-sequence'),
@@ -22,83 +24,43 @@ var gulp = require('gulp'),
     processCSS = require('suitcss-preprocessor'),
     layout = require('./lib/layout'),
     app = require('./lib/app'),
-    pages = require('./data/pages'),
-    images = require('./data/images'),
-    states;
+    customImages = require('./data/custom-images');
 
 gulp.task('default', function () {});
 
-gulp.task('dev', ['build', 'serve', 'watch']);
+gulp.task('pages', function () {
 
-gulp.task('clean', function (cb) {
-  del(['./build/*'], cb);
-});
+  var pages = [],
+      transformData,
+      appendPages,
+      stateToTree,
+      treeToVinyl;
 
-gulp.task('styles', function () {
-  return gulp.src('./lib/app.css')
-    .pipe(through.obj(function (data, enc, next) {
-      data.contents = new Buffer(
-        processCSS(data.contents.toString('utf8'), {
-          source: data.path
-        })
-      );
-      this.push(data);
-      next();
-    }))
-    .pipe(rename({
-      basename: 'style',
-    }))
-    .pipe(gulp.dest('./build'));
-});
-
-gulp.task('images', function () {
-
-  var stateToVinyl;
-
-  unrequire(require.resolve('./data/images'));
-  images = require('./data/images');
-
-  stateToVinyl = through.obj(function (data, enc, next) {
-
-    var contents,
-        file;
-
-    contents = gm(fs.createReadStream(data.src, data.id))
-      .strip()
-      .quality(85)
-      .gravity(data.gravity || 'Center')
-
-
-    if (data.scale) {
-      contents = contents.resize(data.scale.width, data.scale.height, data.scale.options);
+  transformData = through.obj(function (file, enc, next) {
+    // change date to number
+    file.data.date = file.data.date.valueOf();
+    file.data.id = file.data.id || '/' + file.path.substring(file.base.length, file.path.length - 5);
+    if (file.contents.length > 0) {
+      file.data.content = '<div>' + file.contents.toString('utf8') + '</div>';
     };
-
-    if (data.crop) {
-      contents = contents.crop(data.crop.width, data.crop.height, data.crop.x, data.crop.y);
-    };
-
-    contents = contents.stream();
-
-    file = new Vinyl({
-      cwd: process.cwd(),
-      base: path.join(process.cwd()),
-      path: path.join(process.cwd(), '/images', data.id),
-      contents: contents
-    });
-    this.push(file);
+    this.push(file.data);
     next();
   });
 
-  return streamFromArray.obj(images)
-    .pipe(stateToVinyl)
-    .pipe(gulp.dest('./build'));
-
-});
-
-gulp.task('pages', function () {
-
-  var stateToTree,
-      treeToVinyl;
+  appendPages = through.obj(function (data, enc, next) {
+    pages.push(data);
+    next();
+  },
+  function (next) { // flush function
+    var self = this;
+    pages.map(function (page) {
+      self.push({
+        page: page,
+        pages: pages
+      });
+    });
+    next();
+  });
 
   stateToTree = through.obj(function (data, enc, next) {
     var tree = layout(app(data)),
@@ -125,24 +87,120 @@ gulp.task('pages', function () {
   layout = require('./lib/layout');
   unrequire(require.resolve('./lib/app'));
   app = require('./lib/app');
-  unrequire(require.resolve('./data/pages'));
-  pages = require('./data/pages');
 
-  states = pages.map(function (page) {
-    return {
-      page: page,
-      pages: pages
-    };
-  });
-
-  return streamFromArray.obj(states)
+  return gulp.src('./data/**/*.md')
+    .pipe(frontMatter({
+      property: 'data'
+    }))
+    .pipe(markdown())
+    .pipe(transformData)
+    .pipe(appendPages)
     .pipe(stateToTree)
     .pipe(treeToVinyl)
     .pipe(gulp.dest('./build'));
 });
 
+gulp.task('dev', ['build', 'serve', 'watch']);
+
+gulp.task('clean', function (cb) {
+  del(['./build/*'], cb);
+});
+
+gulp.task('styles', function () {
+  return gulp.src('./lib/app.css')
+    .pipe(through.obj(function (data, enc, next) {
+      data.contents = new Buffer(
+        processCSS(data.contents.toString('utf8'), {
+          source: data.path
+        })
+      );
+      this.push(data);
+      next();
+    }))
+    .pipe(rename({
+      basename: 'style',
+    }))
+    .pipe(gulp.dest('./build'));
+});
+
+gulp.task('images', function () {
+  return gulp.src('./data/images/+(sculpture|lightworks|paintings)/*.jpg',
+    { buffer: false })
+    .pipe(through.obj(function (file, enc, next) {
+      file.contents = gm(file.contents)
+        .strip()
+        .quality(85)
+        .gravity('Center')
+        .resize(960, 800, '>')
+        .stream();
+      this.push(file);
+      next();
+    }))
+    .pipe(gulp.dest('./build/images'));
+});
+
+gulp.task('thumbnails', function () {
+  return gulp.src('./data/images/+(sculpture|lightworks|paintings)/*.jpg',
+    { buffer: false })
+    .pipe(rename({suffix:'-thumbnail'}))
+    .pipe(through.obj(function (file, enc, next) {
+      file.contents = gm(file.contents)
+        .strip()
+        .quality(85)
+        .gravity('Center')
+        .resize(undefined, 135)
+        .stream();
+      this.push(file);
+      next();
+    }))
+    .pipe(gulp.dest('./build/images'));
+});
+
+gulp.task('custom-images', function () {
+
+  var stateToVinyl;
+
+  unrequire(require.resolve('./data/custom-images'));
+  customImages = require('./data/custom-images');
+
+  stateToVinyl = through.obj(function (data, enc, next) {
+
+    var contents,
+        file;
+
+    contents = gm(fs.createReadStream(data.src, data.id))
+      .strip()
+      .quality(85)
+      .gravity(data.gravity || 'Center')
+
+    if (data.scale) {
+      contents = contents.resize(data.scale.width, data.scale.height, data.scale.options);
+    };
+
+    if (data.crop) {
+      contents = contents.crop(data.crop.width, data.crop.height, data.crop.x, data.crop.y);
+    };
+
+    contents = contents.stream();
+
+    file = new Vinyl({
+      cwd: process.cwd(),
+      base: path.join(process.cwd()),
+      path: path.join(process.cwd(), '/images', data.id),
+      contents: contents
+    });
+    this.push(file);
+    next();
+  });
+
+  return streamFromArray.obj(customImages)
+    .pipe(stateToVinyl)
+    .pipe(gulp.dest('./build'));
+
+});
+
 gulp.task('build', function (callback) {
-  runSequence('clean', ['pages', 'images', 'styles'], callback);
+  runSequence('clean', ['pages', 'images', 'thumbnails', 'custom-images', 'styles'], callback);
 })
 
 gulp.task('serve', serve({
@@ -152,5 +210,5 @@ gulp.task('serve', serve({
 }));
 
 gulp.task('watch', function () {
-  gulp.watch('lib/**/*', ['build']);
+  gulp.watch(['lib/**/*', 'data/**/*'], ['build']);
 });
