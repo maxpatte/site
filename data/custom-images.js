@@ -35,6 +35,18 @@ images = [
       width: 960,
       height: 540
     }
+  },
+  {
+    id: '/placeholder-720x540.jpg',
+    src: __dirname + '/images/placeholder.jpg',
+    scale: { 
+      width: 960,
+      height: 540
+    },
+    crop: {
+      width: 720,
+      height: 540
+    }
   }
 ];
 /**
