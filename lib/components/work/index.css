@@ -14,13 +14,17 @@
   max-width:960px;
 }
 
+.Work-figure {
+  float:left;
+}
+
 .Work-image {
   margin-bottom:20px;
 }
 
 .Work-caption {
-  width: 70%;
   float:left;
+  width:80%;
 }
 
 .Work-cta {
@@ -28,8 +32,6 @@
 }
 
 .Work-paginator {
-  width: 70%;
-  float:left;
 }
 
 .Work-title {
