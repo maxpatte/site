@@ -11,18 +11,18 @@ order: 6
 <div class="Address">
   <div class="Address-item u-cf" >
       <span class="Address-item-title">Email:</span>
-      <span class="Address-item-description">info@example.com</span>
+      <span class="Address-item-description"><a href="mailto:info@maxpatte.com">info@maxpatte.com</a></span>
   </div>
   <div class="Address-item u-cf" >
     <span class="Address-item-title">Phone:</span>
-    <span class="Address-item-description">+XX (X)XXX XXX XXXX</span>
+    <span class="Address-item-description">+64 (0)210 271 8057</span>
   </div>
   <div class="Address-item u-cf">
     <span class="Address-item-title">Studio:</span>
     <span class="Address-item-description" >
-      <span>XX Lorem ipsum dolor, Sit Amet,</span>
+      <span>17 Knoll Street, Island Bay,</span>
       <br/>
-      <span>Lorem ipsum dolor, XXXX, Sit Amet.</span>
+      <span>Wellington, 6023, New Zealand.</span>
    </span>
   </div>
 </div>
