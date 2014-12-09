@@ -22,6 +22,7 @@ var gulp = require('gulp'),
     path = require('path'),
     streamFromArray = require('stream-from-array'),
     processCSS = require('suitcss-preprocessor'),
+    browserify = require('browserify'),
     layout = require('./lib/layout'),
     app = require('./lib/app'),
     customImages = require('./data/custom-images');
@@ -104,6 +105,21 @@ gulp.task('dev', ['build', 'serve', 'watch']);
 
 gulp.task('clean', function (cb) {
   del(['./build/*'], cb);
+});
+
+gulp.task('scripts', function () {
+  return gulp.src('./lib/client.js', { buffer: false })
+    .pipe(rename('index.js'))
+    .pipe(through.obj(function (file, enc, next) {
+
+      file.contents = browserify(file.contents, { basedir: __dirname + '/lib' })
+        .transform({ global: true }, 'uglifyify')
+        .bundle();
+
+      this.push(file);
+      next();
+    }))
+    .pipe(gulp.dest('./build'));
 });
 
 gulp.task('styles', function () {
@@ -200,7 +216,7 @@ gulp.task('custom-images', function () {
 });
 
 gulp.task('build', function (callback) {
-  runSequence('clean', ['pages', 'images', 'thumbnails', 'custom-images', 'styles'], callback);
+  runSequence('clean', ['pages', 'images', 'thumbnails', 'custom-images', 'styles', 'scripts'], callback);
 })
 
 gulp.task('serve', serve({
