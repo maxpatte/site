@@ -16,7 +16,7 @@
 
 .Press-item {
   float:left;
-  margin:0px 10px 10px 0px;
+  margin:0px 20px 10px 0px;
 }
 
 .Press-item-link {
@@ -25,7 +25,7 @@
 
 .Press-item-title {
   float:left;
-  width:6em;
+  width:8em;
   margin-right:10px;
 }
 
