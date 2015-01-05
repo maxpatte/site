@@ -1,0 +1,15 @@
+/** @define Page; use strict */
+
+:root {
+}
+
+/**
+ * Page
+ */
+
+.Page {
+}
+
+.Page p {
+  max-width:35em;
+}
