@@ -115,7 +115,7 @@ gulp.task('pages', function () {
 gulp.task('dev', ['build', 'serve', 'watch']);
 
 gulp.task('clean', function (cb) {
-  del(['./build/*', '!./build/.git', '!./build/readme.md'], cb);
+  del(['./build/*', '!./build/.git', '!./build/readme.md', '!./build/CNAME'], cb);
 });
 
 gulp.task('scripts', function () {
