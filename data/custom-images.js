@@ -62,6 +62,24 @@ images = [
       width: 135,
       height: 135
     }
+  },
+  {
+    id: '/press/urbis-thumbnail.png',
+    src: __dirname + '/images/press/urbis.png',
+    quality: 100,
+    scale: {
+      width: 135,
+      height: 135
+    }
+  },
+  {
+    id: '/press/seven-sharp-thumbnail.png',
+    src: __dirname + '/images/press/seven-sharp.png',
+    quality: 100,
+    scale: {
+      width: 135,
+      height: 135
+    }
   }
 ];
 /**
