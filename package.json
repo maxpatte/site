@@ -17,7 +17,7 @@
     "gulp-front-matter": "^1.0.0",
     "gulp-rename": "^1.2.0",
     "gulp-serve": "^0.3.0",
-    "html-virtualize": "RGBboy/html-virtualize.git#inline-text-fix",
+    "html-virtualize": "^0.3.0",
     "moment": "^2.8.3",
     "run-sequence": "^1.0.1",
     "showdown": "^0.3.1",
