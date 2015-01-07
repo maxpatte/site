@@ -11,7 +11,7 @@ var gulp = require('gulp'),
     serve = require('gulp-serve'),
     rename = require('gulp-rename'),
     frontMatter = require('gulp-front-matter'),
-    markdown = require('gulp-markdown'),
+    Showdown = require('showdown'),
     fs = require('fs'),
     gm = require('gm'),
     runSequence = require('run-sequence'),
@@ -32,15 +32,23 @@ gulp.task('default', function () {});
 gulp.task('pages', function () {
 
   var pages = [],
+      converter = new Showdown.converter(),
+      markdown,
       transformData,
       appendPages,
       stateToTree,
       treeToVinyl;
 
+  markdown = through.obj(function (file, enc, next) {
+    file.contents = new Buffer(converter.makeHtml(file.contents.toString()));
+    this.push(file);
+    next();
+  });
+
   transformData = through.obj(function (file, enc, next) {
     // change date to number
     file.data.date = file.data.date.valueOf();
-    file.data.id = file.data.id || '/' + file.path.substring(file.base.length, file.path.length - 5);
+    file.data.id = file.data.id || '/' + file.path.substring(file.base.length, file.path.length - 3);
     if (file.contents.length > 0) {
       file.data.content = '<div>' + file.contents.toString('utf8') + '</div>';
     };
@@ -93,7 +101,7 @@ gulp.task('pages', function () {
     .pipe(frontMatter({
       property: 'data'
     }))
-    .pipe(markdown())
+    .pipe(markdown)
     .pipe(transformData)
     .pipe(appendPages)
     .pipe(stateToTree)
