@@ -6,7 +6,7 @@ category: sculpture
 imageURL: /images/sculpture/revision-division-subdivision.jpg
 thumbnailURL: /images/sculpture/revision-division-subdivision-thumbnail.jpg
 medium: Composite plastic. Automotive paints.
-dimensions: 1000mm H x 1800m W x 150mm D
+dimensions: 1000mm x 1800mm x 150mm
 edition: edition of 7
 price: $16,200
 sold: false
