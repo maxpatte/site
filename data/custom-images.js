@@ -37,15 +37,30 @@ images = [
     }
   },
   {
-    id: '/placeholder-720x540.jpg',
-    src: __dirname + '/images/placeholder.jpg',
+    id: '/press/sir-ian-mckellen-thumbnail.jpg',
+    src: __dirname + '/images/press/sir-ian-mckellen.jpg',
     scale: { 
-      width: 960,
-      height: 540
+      width: 135,
+      height: 135
+    }
+  },
+  {
+    id: '/press/stephen-fry-thumbnail.jpg',
+    src: __dirname + '/images/press/stephen-fry.jpg',
+    scale: { 
+      width: 135,
+      height: 135
+    }
+  },
+  {
+    id: '/press/denizen-thumbnail.jpg',
+    src: __dirname + '/images/lightworks/a-new-you.jpg',
+    scale: {
+      height: 135
     },
     crop: {
-      width: 720,
-      height: 540
+      width: 135,
+      height: 135
     }
   }
 ];
