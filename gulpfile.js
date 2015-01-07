@@ -16,6 +16,8 @@ var gulp = require('gulp'),
     gm = require('gm'),
     runSequence = require('run-sequence'),
     stringify = require('virtual-dom-stringify'),
+    beautify = require('js-beautify').html,
+    minify = require('html-minifier').minify,
     through = require('through2'),
     unrequire = require('./lib/unrequire'),
     Vinyl = require('vinyl'),
@@ -89,7 +91,14 @@ gulp.task('pages', function () {
       cwd: process.cwd(),
       base: path.join(process.cwd()),
       path: path.join(process.cwd(), tree.id, '/index.html'),
-      contents: new Buffer('<!doctype html> ' + stringify(tree.contents))
+      contents: new Buffer(
+        beautify(
+          minify('<!doctype html> ' + stringify(tree.contents)),
+          {
+            "indent_size": 2
+          }
+        )
+      )
     });
     this.push(file);
     next();
