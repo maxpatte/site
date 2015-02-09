@@ -80,6 +80,15 @@ images = [
       width: 135,
       height: 135
     }
+  },
+  {
+    id: '/press/the-hills-thumbnail.jpg',
+    src: __dirname + '/images/press/the-hills.jpg',
+    quality: 100,
+    scale: {
+      width: 135,
+      height: 135
+    }
   }
 ];
 /**
