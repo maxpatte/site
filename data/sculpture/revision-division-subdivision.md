@@ -1,7 +1,7 @@
 ---
 layout: work
 title: Revision, Division, Subdivision
-date: 2014-01-01 12:00:00
+date: 2014-02-01 12:00:00
 category: sculpture
 imageURL: /images/sculpture/revision-division-subdivision.jpg
 thumbnailURL: /images/sculpture/revision-division-subdivision-thumbnail.jpg
