@@ -23,6 +23,7 @@
     "moment": "^2.8.3",
     "run-sequence": "^1.0.1",
     "showdown": "^0.3.1",
+    "sort-by": "^1.1.0",
     "stream-from-array": "^0.1.0",
     "suitcss-base": "^0.8.0",
     "suitcss-components-button": "^4.0.0",
