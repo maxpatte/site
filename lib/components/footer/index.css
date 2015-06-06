@@ -1,0 +1,61 @@
+/** @define Footer; use strict */
+
+@import "suitcss-utils-display";
+
+:root {
+}
+
+/**
+ * Footer
+ */
+
+.Footer {
+  width: 100%;
+  margin: 20px 0px;
+}
+
+
+.Footer-email,
+.Footer-facebook,
+.Footer-instagram {
+  background: inline('icons.png');
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.Footer-email {
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+}
+
+.Footer-facebook {
+  background-position: -24px 0px;
+  background-repeat: no-repeat;
+}
+
+.Footer-instagram {
+  background-position: -48px 0px;
+  background-repeat: no-repeat;
+}
+
+.Footer-email:hover,
+.Footer-email:active,
+.Footer-facebook:hover,
+.Footer-facebook:active,
+.Footer-instagram:hover,
+.Footer-instagram:active {
+  background-position-y: -24px;
+}
+
+
+@media (min-resolution: 1.25dppx) {
+  /* styles for retina viewport */
+  .Footer-email,
+  .Footer-facebook,
+  .Footer-instagram {
+    background-image: inline('icons-x2.png');
+    background-size: auto 48px;
+  }
+}

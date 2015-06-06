@@ -23,7 +23,16 @@ var gulp = require('gulp'),
     Vinyl = require('vinyl'),
     path = require('path'),
     streamFromArray = require('stream-from-array'),
-    processCSS = require('suitcss-preprocessor'),
+    postcss = require('gulp-postcss'),
+    postcssPlugins = [
+      require('postcss-import')(),
+      require('postcss-assets')(),
+      require('postcss-calc')(),
+      require('postcss-custom-media')(),
+      require('postcss-custom-properties')(),
+      require('autoprefixer-core')(),
+      require('csswring')()
+    ],
     browserify = require('browserify'),
     layout = require('./lib/layout'),
     app = require('./lib/app'),
@@ -144,15 +153,7 @@ gulp.task('scripts', function () {
 
 gulp.task('styles', function () {
   return gulp.src('./lib/app.css')
-    .pipe(through.obj(function (data, enc, next) {
-      data.contents = new Buffer(
-        processCSS(data.contents.toString('utf8'), {
-          source: data.path
-        })
-      );
-      this.push(data);
-      next();
-    }))
+    .pipe(postcss(postcssPlugins))
     .pipe(rename({
       basename: 'style',
     }))

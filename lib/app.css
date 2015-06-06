@@ -5,6 +5,7 @@
 @import "./components/button";
 @import "suitcss-utils-layout";
 @import "./components/header";
+@import "./components/footer";
 @import "./components/brand";
 @import "./components/navigation";
 @import "./components/page";
