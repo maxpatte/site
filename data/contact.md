@@ -20,9 +20,9 @@ order: 6
   <div class="Address-item u-cf">
     <span class="Address-item-title">Studio:</span>
     <span class="Address-item-description" >
-      <span>17 Knoll Street, Island Bay,</span>
+      <span>140A Park Rd, Mirimar,</span>
       <br/>
-      <span>Wellington, 6023, New Zealand.</span>
+      <span>Wellington, 6022, New Zealand.</span>
    </span>
   </div>
 </div>
