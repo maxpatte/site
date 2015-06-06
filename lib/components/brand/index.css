@@ -1,7 +1,8 @@
 /** @define Brand; use strict */
 
 :root {
-  --Brand-color:#428bca;
+  --Brand-color: #428bca;
+  --Brand-color-active: #428bca;
 }
 
 /**
@@ -13,40 +14,14 @@
   float: left;
   text-decoration: none;
   margin-right: 40px;
+  color:var(--Brand-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.Brand,
 .Brand:hover,
 .Brand:focus,
 .Brand:active {
-  color:var(--Brand-color);
+  color:var(--Brand-color-active);
   text-decoration: none;
-}
-
-.Brand--color {
-}
-
-.Brand-1 {
-  color: #0099FF; /* light blue */
-}
-.Brand-2 {
-  color: #FFDD33; /* yellow */
-}
-.Brand-3 {
-  color: #FF33DD; /* pink */
-}
-.Brand-4 {
-  color: #FF3333; /* red */
-}
-.Brand-5 {
-  color: #3333FF; /* dark blue */
-}
-.Brand-6 {
-  color: #33CC33; /* green */
-}
-.Brand-7 {
-  color: #FF9900; /* orange */
-}
-.Brand-8 {
-  color: #333333; /* black */
 }
