@@ -37,6 +37,13 @@ images = [
     }
   },
   {
+    id: '/matterhorn.jpg',
+    src: __dirname + '/images/matterhorn.jpg',
+    scale: {
+      width: 960
+    }
+  },
+  {
     id: '/press/sir-ian-mckellen-thumbnail.jpg',
     src: __dirname + '/images/press/sir-ian-mckellen.jpg',
     scale: { 
