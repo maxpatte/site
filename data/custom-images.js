@@ -37,6 +37,13 @@ images = [
     }
   },
   {
+    id: '/exhibition-2015.jpg',
+    src: __dirname + '/images/exhibition-2015.jpg',
+    scale: {
+      width: 960
+    }
+  },
+  {
     id: '/matterhorn.jpg',
     src: __dirname + '/images/matterhorn.jpg',
     scale: {
