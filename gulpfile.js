@@ -205,7 +205,7 @@ gulp.task('custom-images', function () {
     var contents,
         file;
 
-    contents = gm(fs.createReadStream(data.src, data.id))
+    contents = gm(fs.createReadStream(data.src), data.id)
       .strip()
       .quality(data.quality || 85)
       .gravity(data.gravity || 'Center')
