@@ -103,6 +103,15 @@ images = [
       width: 135,
       height: 135
     }
+  },
+  {
+    id: '/press/2015-exhibition-shed-11-thumbnail.jpg',
+    src: __dirname + '/images/press/2015-exhibition-shed-11.jpg',
+    quality: 100,
+    scale: {
+      width: 135,
+      height: 135
+    }
   }
 ];
 /**
