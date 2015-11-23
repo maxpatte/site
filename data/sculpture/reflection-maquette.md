@@ -8,6 +8,6 @@ thumbnailURL: /images/sculpture/reflection-maquette-thumbnail.jpg
 medium: Cast iron maquette on steel base
 dimensions: 320mm x 210mm x 280mm
 edition: Unlimited edition
-price: $2,450
+price: $2,650
 sold: false
 ---

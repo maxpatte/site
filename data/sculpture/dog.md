@@ -8,6 +8,6 @@ thumbnailURL: /images/sculpture/dog-thumbnail.jpg
 medium: Cast iron / Iron resin
 dimensions: 1060mm x 560mm x 260mm
 edition: edition of 10 / edition of 25
-price: $4,650 / $2,650
+price: Sold / $3,450
 sold: false
 ---

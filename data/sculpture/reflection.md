@@ -9,5 +9,5 @@ medium: Cast iron
 dimensions: 1900mm x 750mm x 750mm
 edition: edition of 7
 price: $56,000
-sold: false
+sold: true
 ---

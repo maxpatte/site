@@ -8,7 +8,7 @@ thumbnailURL: /images/sculpture/solace-in-the-wind-thumbnail.jpg
 medium: Cast iron
 dimensions: 2000mm x mm x mm
 edition: edition of 7
-price: $85,000
+price: $102,000
 sold: false
 location: The Hills. Queenstown. New Zealand.
 ---
