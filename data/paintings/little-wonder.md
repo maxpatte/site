@@ -7,6 +7,6 @@ imageURL: /images/paintings/little-wonder.jpg
 thumbnailURL: /images/paintings/little-wonder-thumbnail.jpg
 medium: Acrylic paints, acrylic primer, gold leaf size, gold foil, epoxy resin, clear coat, custom board and flexi ply
 dimensions: 1618mm Ø x 34mm D
-price: $7,500
+price: $8,500
 sold: false
 ---
