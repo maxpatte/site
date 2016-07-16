@@ -8,6 +8,6 @@ thumbnailURL: /images/sculpture/the-frolic-and-the-fancy-no-3-maquette-thumbnail
 medium: Cast iron
 dimensions: 1920mm x 800mm x 550mm
 edition: edition of 7
-price: $11,700
+price: $12,500
 sold: false
 ---
