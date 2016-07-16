@@ -23,7 +23,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-serve": "^0.3.0",
     "html-minifier": "^0.6.9",
-    "html-virtualize": "^0.3.0",
+    "html-to-vdom": "^0.7.0",
     "js-beautify": "^1.5.4",
     "moment": "^2.8.3",
     "postcss-assets": "^2.1.2",
@@ -42,8 +42,8 @@
     "suitcss-utils-layout": "^0.4.2",
     "through2": "^0.6.3",
     "uglifyify": "^2.6.0",
+    "vdom-to-html": "^2.3.0",
     "vinyl": "^0.4.3",
-    "virtual-dom": "1.0.0",
-    "virtual-dom-stringify": "^1.0.1"
+    "virtual-dom": "^2.1.1"
   }
 }
