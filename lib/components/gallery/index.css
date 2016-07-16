@@ -1,5 +1,6 @@
 /** @define Gallery; use strict */
 
+@import "../gallery-item";
 @import "../../utilities";
 
 :root {
@@ -14,6 +15,25 @@
 }
 
 .Gallery-item {
-  float:left;
-  margin:0px 10px 10px 0px;
+  max-width: 728px;
+  margin: 0px 0px 20px 0px;
+}
+
+@media only screen and (min-width: 768px) {
+  .Gallery {
+    display: flex;
+    flex-flow: row;
+  }
+
+  .Gallery-item {
+    float: none;
+    flex: 1 0 auto;
+    margin: 0px 20px 20px 0px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .Gallery-item {
+    max-width: 960px;
+  }
 }

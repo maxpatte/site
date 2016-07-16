@@ -1,0 +1,71 @@
+/** @define Work; use strict */
+
+@import "../paginator";
+@import "../../utilities";
+
+:root {
+}
+
+/**
+ * Work
+ */
+
+.GalleryItem {
+}
+
+.GalleryItem-figure {
+}
+
+.GalleryItem-image {
+  margin:0px auto 20px;
+}
+
+.GalleryItem-caption {
+  float:left;
+  width: 80%;
+  max-width: 32em;
+}
+
+.GalleryItem-cta {
+  float:right;
+}
+
+.GalleryItem-title {
+  margin-top:0px;
+  color:#666666;
+}
+
+.GalleryItem-medium,
+.GalleryItem-dimensions,
+.GalleryItem-edition,
+.GalleryItem-location,
+.GalleryItem-price {
+  display:block;
+}
+
+.GalleryItem-medium,
+.GalleryItem-dimensions,
+.GalleryItem-edition,
+.GalleryItem-location {
+  font-style: italic;
+  color:#888;
+}
+
+@media only screen and (min-width: 768px) {
+  .GalleryItem-figure {
+    float:left;
+  }
+
+  .GalleryItem-image {
+    margin:0px 0px 20px;
+  }
+
+  .GalleryItem-caption {
+    float:none;
+  }
+
+  .GalleryItem-cta {
+    float:none;
+    margin-top: 20px;
+  }
+}
