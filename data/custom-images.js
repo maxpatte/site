@@ -51,6 +51,41 @@ images = [
     }
   },
   {
+    id: '/slideshow-1.jpg',
+    src: __dirname + '/images/slideshow-20150429.jpg',
+    scale: {
+      width: 960
+    }
+  },
+  {
+    id: '/slideshow-2.jpg',
+    src: __dirname + '/images/slideshow-20150520.jpg',
+    scale: {
+      width: 960
+    }
+  },
+  {
+    id: '/slideshow-3.jpg',
+    src: __dirname + '/images/slideshow-20150915.jpg',
+    scale: {
+      width: 960
+    }
+  },
+  {
+    id: '/slideshow-4.jpg',
+    src: __dirname + '/images/slideshow-20160517.jpg',
+    scale: {
+      width: 960
+    }
+  },
+  {
+    id: '/slideshow-5.jpg',
+    src: __dirname + '/images/slideshow-20160630.jpg',
+    scale: {
+      width: 960
+    }
+  },
+  {
     id: '/press/sir-ian-mckellen-thumbnail.jpg',
     src: __dirname + '/images/press/sir-ian-mckellen.jpg',
     scale: {

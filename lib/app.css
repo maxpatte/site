@@ -13,6 +13,7 @@
 @import "./components/work";
 @import "./components/press";
 @import "./components/address";
+@import "./components/slideshow";
 
 :root {
   --text-color: #333333;

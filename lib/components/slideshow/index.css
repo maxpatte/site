@@ -1,0 +1,89 @@
+/** @define Slideshow; use strict */
+
+:root {
+}
+
+/**
+ * Slideshow
+ */
+
+.Slideshow {
+  position:relative;
+}
+
+.Slideshow-placeholder {
+  opacity: 0;
+}
+
+.Slideshow-image {
+  position:absolute;
+  top: 0;
+  left: 0;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+.Slideshow-image:nth-child(1) {
+  animation-name: fade1;
+}
+
+.Slideshow-image:nth-child(2) {
+  animation-name: fade2;
+}
+
+.Slideshow-image:nth-child(3) {
+  animation-name: fade3;
+}
+
+.Slideshow-image:nth-child(4) {
+  animation-name: fade4;
+}
+
+.Slideshow-image:nth-child(5) {
+  animation-name: fade5;
+}
+
+@keyframes fade1 {
+  0%   { opacity: 1 }
+  20%  { opacity: 0 }
+  40%  { opacity: 0 }
+  60%  { opacity: 0 }
+  80%  { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes fade2 {
+  0%   { opacity: 0 }
+  20%  { opacity: 1 }
+  40%  { opacity: 0 }
+  60%  { opacity: 0 }
+  80%  { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+@keyframes fade3 {
+  0%   { opacity: 0 }
+  20%  { opacity: 0 }
+  40%  { opacity: 1 }
+  60%  { opacity: 0 }
+  80%  { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+@keyframes fade4 {
+  0%   { opacity: 0 }
+  20%  { opacity: 0 }
+  40%  { opacity: 0 }
+  60%  { opacity: 1 }
+  80%  { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+@keyframes fade5 {
+  0%   { opacity: 0 }
+  20%  { opacity: 0 }
+  40%  { opacity: 0 }
+  60%  { opacity: 0 }
+  80%  { opacity: 1 }
+  100% { opacity: 0 }
+}
