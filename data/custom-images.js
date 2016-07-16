@@ -23,7 +23,7 @@ images = [
   {
     id: '/placeholder-240x135.jpg',
     src: __dirname + '/images/placeholder.jpg',
-    scale: { 
+    scale: {
       width: 240,
       height: 135
     }
@@ -31,7 +31,7 @@ images = [
   {
     id: '/placeholder-960x540.jpg',
     src: __dirname + '/images/placeholder.jpg',
-    scale: { 
+    scale: {
       width: 960,
       height: 540
     }
@@ -53,7 +53,7 @@ images = [
   {
     id: '/press/sir-ian-mckellen-thumbnail.jpg',
     src: __dirname + '/images/press/sir-ian-mckellen.jpg',
-    scale: { 
+    scale: {
       width: 135,
       height: 135
     }
@@ -61,14 +61,14 @@ images = [
   {
     id: '/press/stephen-fry-thumbnail.jpg',
     src: __dirname + '/images/press/stephen-fry.jpg',
-    scale: { 
+    scale: {
       width: 135,
       height: 135
     }
   },
   {
     id: '/press/denizen-thumbnail.jpg',
-    src: __dirname + '/images/lightworks/a-new-you.jpg',
+    src: __dirname + '/images/press/a-new-you.jpg',
     scale: {
       height: 135
     },
