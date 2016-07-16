@@ -2,7 +2,7 @@
 layout: work
 title: Dog
 date: 2014-01-01 12:00:00
-category: sculpture
+category: archive
 imageURL: /images/sculpture/dog.jpg
 thumbnailURL: /images/sculpture/dog-thumbnail.jpg
 medium: Iron resin

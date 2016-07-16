@@ -1,8 +1,8 @@
 ---
 layout: work
-title: Block Head Black 
+title: Block Head Black
 date: 2012-01-01 12:00:00
-category: sculpture
+category: archive
 imageURL: /images/sculpture/block-head-black.jpg
 thumbnailURL: /images/sculpture/block-head-black-thumbnail.jpg
 medium: Acrylic polymer plaster

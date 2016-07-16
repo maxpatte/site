@@ -2,7 +2,7 @@
 layout: work
 title: Rest
 date: 2013-01-01 12:00:00
-category: sculpture
+category: archive
 imageURL: /images/sculpture/rest.jpg
 thumbnailURL: /images/sculpture/rest-thumbnail.jpg
 medium: Black polymer plaster

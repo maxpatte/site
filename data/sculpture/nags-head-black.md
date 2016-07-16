@@ -2,7 +2,7 @@
 layout: work
 title: Nags Head. Black
 date: 2013-01-01 12:00:00
-category: sculpture
+category: archive
 imageURL: /images/sculpture/nags-head-black.jpg
 thumbnailURL: /images/sculpture/nags-head-black-thumbnail.jpg
 medium: Acrylic polymer plaster

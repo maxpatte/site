@@ -2,7 +2,7 @@
 layout: work
 title: Sentinel 1
 date: 2009-01-01 12:00:00
-category: sculpture
+category: archive
 imageURL: /images/sculpture/sentinel-1.jpg
 thumbnailURL: /images/sculpture/sentinel-1-thumbnail.jpg
 medium: Cast iron

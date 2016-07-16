@@ -2,7 +2,7 @@
 layout: work
 title: Reflection Maquette
 date: 2008-01-01 12:00:00
-category: sculpture
+category: archive
 imageURL: /images/sculpture/reflection-maquette.jpg
 thumbnailURL: /images/sculpture/reflection-maquette-thumbnail.jpg
 medium: Cast iron maquette on steel base

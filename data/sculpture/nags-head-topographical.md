@@ -2,7 +2,7 @@
 layout: work
 title: Nags Head. Topographical
 date: 2013-01-01 12:00:00
-category: sculpture
+category: archive
 imageURL: /images/sculpture/nags-head-topographical.jpg
 thumbnailURL: /images/sculpture/nags-head-topographical-thumbnail.jpg
 medium: Dental stone
