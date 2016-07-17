@@ -23,6 +23,7 @@
   .Gallery {
     display: flex;
     flex-flow: row;
+    overflow: scroll;
   }
 
   .Gallery-item {
