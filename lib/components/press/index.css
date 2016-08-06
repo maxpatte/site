@@ -1,10 +1,6 @@
 /** @define Press; use strict */
 
-@import "../../utilities";
-
 :root {
-  --Press-item-link-color: #428bca;
-  --Press-item-link-hover-color: #23527c;
 }
 
 /**
@@ -14,37 +10,25 @@
 .Press {
 }
 
-.Press-item {
-  float:left;
-  margin:0px 20px 10px 0px;
-}
+/** Links */
 
-.Press-item-link {
-  display:block;
-}
-
-.Press-item-title {
-  float:left;
-  width:8em;
-  margin-right:10px;
-}
-
-.Press-item-thumbnail {
-}
-
-.Press-item-link {
-  color:var(--Press-item-link-color);
-}
-
-.Press-item-link:hover,
-.Press-item-link:focus,
-.Press-item-link:active {
-  color:var(--Press-item-link-hover-color);
-}
-
-.Press-item-link,
-.Press-item-link:hover,
-.Press-item-link:focus,
-.Press-item-link:active {
+.Press a {
+  font-size: var(--font-size-h5);
+  font-weight: var(--headings-font-weight);
+  color: var(--headings-color);
   text-decoration: none;
+}
+
+.Press a:hover,
+.Press a:focus {
+  color: var(--headings-color);
+  text-decoration: var(--link-hover-decoration);
+}
+
+.Press a:focus {
+  /** Default */
+  outline: thin dotted;
+  /** WebKit */
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }

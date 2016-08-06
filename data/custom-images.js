@@ -84,69 +84,6 @@ images = [
     scale: {
       width: 960
     }
-  },
-  {
-    id: '/press/sir-ian-mckellen-thumbnail.jpg',
-    src: __dirname + '/images/press/sir-ian-mckellen.jpg',
-    scale: {
-      width: 135,
-      height: 135
-    }
-  },
-  {
-    id: '/press/stephen-fry-thumbnail.jpg',
-    src: __dirname + '/images/press/stephen-fry.jpg',
-    scale: {
-      width: 135,
-      height: 135
-    }
-  },
-  {
-    id: '/press/denizen-thumbnail.jpg',
-    src: __dirname + '/images/press/a-new-you.jpg',
-    scale: {
-      height: 135
-    },
-    crop: {
-      width: 135,
-      height: 135
-    }
-  },
-  {
-    id: '/press/urbis-thumbnail.png',
-    src: __dirname + '/images/press/urbis.png',
-    quality: 100,
-    scale: {
-      width: 135,
-      height: 135
-    }
-  },
-  {
-    id: '/press/seven-sharp-thumbnail.png',
-    src: __dirname + '/images/press/seven-sharp.png',
-    quality: 100,
-    scale: {
-      width: 135,
-      height: 135
-    }
-  },
-  {
-    id: '/press/the-hills-thumbnail.jpg',
-    src: __dirname + '/images/press/the-hills.jpg',
-    quality: 100,
-    scale: {
-      width: 135,
-      height: 135
-    }
-  },
-  {
-    id: '/press/2015-exhibition-shed-11-thumbnail.jpg',
-    src: __dirname + '/images/press/2015-exhibition-shed-11.jpg',
-    quality: 100,
-    scale: {
-      width: 135,
-      height: 135
-    }
   }
 ];
 /**
