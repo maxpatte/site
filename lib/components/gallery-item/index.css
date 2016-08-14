@@ -50,22 +50,3 @@
   font-style: italic;
   color:#888;
 }
-
-@media only screen and (min-width: 768px) {
-  .GalleryItem-figure {
-    float:left;
-  }
-
-  .GalleryItem-image {
-    margin:0px 0px 20px;
-  }
-
-  .GalleryItem-caption {
-    float:none;
-  }
-
-  .GalleryItem-cta {
-    float:none;
-    margin-top: 20px;
-  }
-}
