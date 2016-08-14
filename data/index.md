@@ -12,6 +12,7 @@ date: 2014-01-01 12:00:00
     <img class="Slideshow-image u-imgResponsive" src="/images/slideshow-3.jpg"/>
     <img class="Slideshow-image u-imgResponsive" src="/images/slideshow-4.jpg"/>
     <img class="Slideshow-image u-imgResponsive" src="/images/slideshow-5.jpg"/>
+    <img class="Slideshow-image u-imgResponsive" src="/images/slideshow-6.jpg"/>
     <img class="Slideshow-placeholder u-imgResponsive" src="/images/slideshow-1.jpg"/>
   </div>
 </div>

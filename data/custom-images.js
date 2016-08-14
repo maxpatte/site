@@ -80,7 +80,14 @@ images = [
   },
   {
     id: '/slideshow-5.jpg',
-    src: __dirname + '/images/slideshow-20160630.jpg',
+    src: __dirname + '/images/sculpture/zzzs.jpg',
+    scale: {
+      width: 960
+    }
+  },
+  {
+    id: '/slideshow-6.jpg',
+    src: __dirname + '/images/sculpture/into-oblivion.jpg',
     scale: {
       width: 960
     }
