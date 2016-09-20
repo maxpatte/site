@@ -130,6 +130,27 @@ gulp.task('pages', function () {
     .pipe(gulp.dest('./build'));
 });
 
+gulp.task('sitemap', ['pages'], function () {
+
+  var contents = '';
+  var aggregateContent = through.obj(function (file, enc, next) {
+    contents += path.join('http://maxpatte.com/', file.relative) + '\n';
+    next();
+  }, function (next) { // flush function
+    var file = new Vinyl({
+      cwd: process.cwd(),
+      base: path.join(process.cwd()),
+      path: path.join(process.cwd(), '/sitemap.txt'),
+      contents: new Buffer(contents)
+    });
+    this.push(file);
+    next();
+  });
+  return gulp.src('./build/**/*.html')
+    .pipe(aggregateContent)
+    .pipe(gulp.dest('./build'));
+});
+
 gulp.task('dev', ['build', 'serve', 'watch']);
 
 gulp.task('clean', function (cb) {
@@ -237,7 +258,7 @@ gulp.task('custom-images', function () {
 });
 
 gulp.task('build', function (callback) {
-  runSequence('clean', ['pages', 'images', 'thumbnails', 'custom-images', 'styles', 'scripts'], callback);
+  runSequence('clean', ['pages', 'sitemap', 'images', 'thumbnails', 'custom-images', 'styles', 'scripts'], callback);
 })
 
 gulp.task('serve', serve({
