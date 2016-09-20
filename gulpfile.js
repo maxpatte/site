@@ -134,7 +134,7 @@ gulp.task('sitemap', ['pages'], function () {
 
   var contents = '';
   var aggregateContent = through.obj(function (file, enc, next) {
-    contents += path.join('http://maxpatte.com/', file.relative) + '\n';
+    contents += 'http://maxpatte.com/' + file.relative + '\n';
     next();
   }, function (next) { // flush function
     var file = new Vinyl({
