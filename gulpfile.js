@@ -85,7 +85,7 @@ gulp.task('pages', function () {
   stateToTree = through.obj(function (data, enc, next) {
     // pages without a layout exist just for data and should not be rendered.
     if (data.page.layout) {
-      var tree = layout(app(data)),
+      var tree = layout(data.page, app(data)),
           out = {
             id: data.page.id,
             contents: tree

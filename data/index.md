@@ -1,7 +1,7 @@
 ---
 layout: page
 id : /
-title: Max Patté
+description: Artists page
 date: 2014-01-01 12:00:00
 ---
 
