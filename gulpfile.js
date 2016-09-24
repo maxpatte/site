@@ -132,16 +132,17 @@ gulp.task('pages', function () {
 
 gulp.task('sitemap', ['pages'], function () {
 
-  var contents = '';
+  var contents = [];
   var aggregateContent = through.obj(function (file, enc, next) {
-    contents += 'http://maxpatte.com/' + file.relative + '\n';
+    contents.push('http://maxpatte.com/' + file.relative + '\n');
     next();
   }, function (next) { // flush function
+
     var file = new Vinyl({
       cwd: process.cwd(),
       base: path.join(process.cwd()),
       path: path.join(process.cwd(), '/sitemap.txt'),
-      contents: new Buffer(contents)
+      contents: new Buffer(contents.sort().join(''))
     });
     this.push(file);
     next();
