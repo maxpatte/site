@@ -8,5 +8,5 @@ thumbnailURL: /images/lightworks/champagne-supernova-thumbnail.jpg
 medium: Automotive paints, plexiglass, clear coat, custom board and flexi ply, LEDs, 24v power supply, electrical cable, 240v plug, micro controller
 dimensions: 1618mm Ø x 74mm D
 price: $ 19,500
-sold: true
+sold: false
 ---
