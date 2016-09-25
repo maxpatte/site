@@ -59,7 +59,7 @@ gulp.task('pages', function () {
   transformData = through.obj(function (file, enc, next) {
     // change date to number
     file.data.date = file.data.date.valueOf();
-    file.data.id = file.data.id || '/' + file.path.substring(file.base.length, file.path.length - 3);
+    file.data.id = file.data.id || '/' + file.path.substring(file.base.length, file.path.length - 3) + '/';
     if (file.contents.length > 0) {
       file.data.content = '<div>' + file.contents.toString('utf8') + '</div>';
     };
