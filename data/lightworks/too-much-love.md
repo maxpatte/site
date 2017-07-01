@@ -1,7 +1,7 @@
 ---
 layout: work
 title: Too Much Love
-date: 2015-06-05 12:00:00
+date: 2015-01-01 12:00:00
 category: lightworks
 imageURL: /images/lightworks/too-much-love.jpg
 thumbnailURL: /images/lightworks/too-much-love-thumbnail.jpg
