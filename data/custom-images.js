@@ -52,42 +52,42 @@ images = [
   },
   {
     id: '/slideshow-1.jpg',
-    src: __dirname + '/images/slideshow-20150429.jpg',
+    src: __dirname + '/images/slideshow-20161004.jpg',
     scale: {
       width: 960
     }
   },
   {
     id: '/slideshow-2.jpg',
-    src: __dirname + '/images/slideshow-20150520.jpg',
-    scale: {
-      width: 960
-    }
-  },
-  {
-    id: '/slideshow-3.jpg',
-    src: __dirname + '/images/slideshow-20150915.jpg',
-    scale: {
-      width: 960
-    }
-  },
-  {
-    id: '/slideshow-4.jpg',
     src: __dirname + '/images/slideshow-20160517.jpg',
     scale: {
       width: 960
     }
   },
   {
+    id: '/slideshow-3.jpg',
+    src: __dirname + '/images/slideshow-20161003.jpg',
+    scale: {
+      width: 960
+    }
+  },
+  {
+    id: '/slideshow-4.jpg',
+    src: __dirname + '/images/slideshow-20161005.jpg',
+    scale: {
+      width: 960
+    }
+  },
+  {
     id: '/slideshow-5.jpg',
-    src: __dirname + '/images/sculpture/zzzs.jpg',
+    src: __dirname + '/images/slideshow-20170209.jpg',
     scale: {
       width: 960
     }
   },
   {
     id: '/slideshow-6.jpg',
-    src: __dirname + '/images/sculpture/into-oblivion.jpg',
+    src: __dirname + '/images/slideshow-20161010.jpg',
     scale: {
       width: 960
     }
